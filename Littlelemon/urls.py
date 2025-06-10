@@ -29,6 +29,11 @@ from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+import os
+from django.conf import settings
+from django.conf.urls.static import static
+from Littlelemon.settings import BASE_DIR
+
 
 # router = DefaultRouter()
 # router.register(r'menu', MenuItemViewSet, basename='menuitem')
@@ -77,3 +82,7 @@ urlpatterns = [
     #path('orders/<int:id>/', views.single_order),  # New route for retrieving a single order
 
 ]
+
+# Serve static files in dev
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'static'))
