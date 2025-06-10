@@ -85,4 +85,7 @@ urlpatterns = [
 
 # Serve static files in dev
 if settings.DEBUG:
-   urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+else:
+    # For Render and other prod platforms, make sure STATIC_ROOT is served
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
