@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -175,3 +176,4 @@ REST_FRAMEWORK = {
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]       # For dev (optional custom files)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')         # For collectstatic (prod)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
