@@ -173,7 +173,13 @@ REST_FRAMEWORK = {
 
 }
 
+# Static files (CSS, JavaScript, Images)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]       # For dev (optional custom files)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')         # For collectstatic (prod)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Only set this when collecting static for production (Render)
+if os.getenv('RENDER') == 'true':
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Optional: fix for white-noise if used
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
