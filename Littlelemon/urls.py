@@ -85,4 +85,4 @@ urlpatterns = [
 
 # Serve static files in dev
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'static'))
+   urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
