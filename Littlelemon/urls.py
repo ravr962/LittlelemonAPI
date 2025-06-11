@@ -53,13 +53,13 @@ schema_view = get_schema_view(
     permission_classes=[permissions.AllowAny],
 )
 
-from LittlelemonAPI.views import create_superuser_view
+#from LittlelemonAPI.views import create_superuser_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),  # or path('api/', views.index) # if you want to keep a landing/index view
     path('api/token/', obtain_auth_token, name='api_token_auth'),
-    path('create-superuser/', create_superuser_view),
+    # path('create-superuser/', create_superuser_view),
     # path('', include(router.urls)),
     
     # Route all API requests to versioned files
