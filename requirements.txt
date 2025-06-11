@@ -15,3 +15,5 @@ sqlparse==0.5.3
 typing_extensions==4.13.2
 uritemplate==4.2.0
 whitenoise==6.9.0  # Or whatever latest version pip gives you
+dj-database-url
+psycopg
