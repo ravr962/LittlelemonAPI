@@ -17,3 +17,4 @@ uritemplate==4.2.0
 whitenoise==6.9.0  # Or whatever latest version pip gives you
 dj-database-url
 psycopg
+python-dotenv

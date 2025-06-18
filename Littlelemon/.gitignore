@@ -1,6 +1,37 @@
-.DS_Store
 *.pyc
-__pycache__/
 *.sqlite3
-.env
 #/staticfiles
+# Python
+__pycache__/
+*.py[cod]
+
+# Django/SQLite
+db.sqlite3
+
+# Environment
+.env
+
+# VSCode/IDE
+.vscode/
+*.swp
+
+# Docker
+*.pid
+*.log
+*.sock
+*.db
+*.tar
+*.bak
+*.tgz
+*.gz
+*.egg-info/
+*.egg
+*.dockerfile
+
+# Pipenv / Poetry
+Pipfile.lock
+.envrc
+
+# OS
+.DS_Store
+Thumbs.db
