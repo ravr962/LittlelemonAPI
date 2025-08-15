@@ -35,3 +35,4 @@ Pipfile.lock
 # OS
 .DS_Store
 Thumbs.db
+.DS_Store
